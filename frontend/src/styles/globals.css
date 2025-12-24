@@ -1,0 +1,847 @@
+:root {
+    --bg-main: #faf7f2;
+    --primary: #26354d;
+    --secondary: #6b7a99;
+    --accent: #3f8cff;
+
+    --white: #ffffff;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+
+    --danger: #e63946;
+    --border: #e5e7eb;
+}
+
+/* =====================
+   RESET
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =====================
+   BASE
+===================== */
+body {
+    font-family: "Inter", system-ui, sans-serif;
+    background: #f7f5f2;
+    color: #263650;
+}
+
+/* =====================
+   TYPOGRAPHY
+===================== */
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* =====================
+   LOGIN PAGE
+===================== */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef1f5;
+}
+
+.login-card {
+    width: 380px;
+    padding: 36px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.login-title {
+    font-size: 2rem;
+    margin-bottom: 6px;
+}
+
+.login-subtitle {
+    font-size: 0.95rem;
+    color: #637990;
+    margin-bottom: 24px;
+}
+
+/* =====================
+   INPUT
+===================== */
+.input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    border: 1px solid #d6d0c8;
+    font-size: 14px;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #263650;
+}
+
+/* =====================
+   BUTTON
+===================== */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #263650;
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #1e2a40;
+}
+
+/* =====================
+   SPLIT AUTH LAYOUT
+===================== */
+.auth-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* LEFT BRAND */
+.auth-brand {
+    position: relative;
+    isolation: isolate;
+    z-index: 0;
+    flex: 1;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+        radial-gradient(circle at top left, rgba(38, 54, 80, 0.12), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(113, 78, 58, 0.12), transparent 40%),
+        #f7f5f2;
+}
+
+/* TEXT ABOVE EMOJIS */
+.auth-brand h1,
+.auth-brand p {
+    position: relative;
+    z-index: 2;
+}
+
+.auth-brand h1 {
+    font-size: 3.4rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.auth-brand p {
+    max-width: 420px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* RIGHT LOGIN */
+.login-page {
+    flex: 1;
+    background: #eef1f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+    .auth-wrapper {
+        flex-direction: column;
+    }
+
+    .auth-brand {
+        display: none;
+    }
+}
+
+/* =====================
+   FLOATING EMOJIS
+===================== */
+.floating-emojis {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-emojis span {
+    position: absolute;
+    bottom: -80px;
+    font-size: 2.2rem;
+    opacity: 0.8;
+    filter: blur(0.2px);
+    animation: floatUp 14s linear infinite;
+}
+
+/* spread across screen */
+.floating-emojis span:nth-child(1) {
+    left: 5%;
+    animation-duration: 12s;
+}
+
+.floating-emojis span:nth-child(2) {
+    left: 12%;
+    animation-duration: 14s;
+}
+
+.floating-emojis span:nth-child(3) {
+    left: 20%;
+    animation-duration: 11s;
+}
+
+.floating-emojis span:nth-child(4) {
+    left: 28%;
+    animation-duration: 15s;
+}
+
+.floating-emojis span:nth-child(5) {
+    left: 36%;
+    animation-duration: 13s;
+}
+
+.floating-emojis span:nth-child(6) {
+    left: 44%;
+    animation-duration: 16s;
+}
+
+.floating-emojis span:nth-child(7) {
+    left: 52%;
+    animation-duration: 12s;
+}
+
+.floating-emojis span:nth-child(8) {
+    left: 60%;
+    animation-duration: 14s;
+}
+
+.floating-emojis span:nth-child(9) {
+    left: 68%;
+    animation-duration: 11s;
+}
+
+.floating-emojis span:nth-child(10) {
+    left: 76%;
+    animation-duration: 15s;
+}
+
+.floating-emojis span:nth-child(11) {
+    left: 84%;
+    animation-duration: 13s;
+}
+
+.floating-emojis span:nth-child(12) {
+    left: 92%;
+    animation-duration: 16s;
+}
+
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(-130vh) rotate(360deg);
+    }
+}
+
+@media (max-width: 900px) {
+    .auth-brand {
+        display: none;
+    }
+}
+
+/* =====================
+   STUDENT DASHBOARD
+===================== */
+
+.dashboard-page {
+    position: relative;
+    min-height: 100vh;
+    background: #f7f5f2;
+    overflow: hidden;
+}
+
+.dashboard-content {
+    position: relative;
+    z-index: 2;
+    padding: 80px;
+}
+
+.dashboard-header h1 {
+    font-size: 3rem;
+    margin-bottom: 8px;
+}
+
+.dashboard-header p {
+    color: #637990;
+    margin-bottom: 40px;
+}
+
+/* Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 260px);
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.stat-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.stat-number {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #263650;
+}
+
+/* Courses */
+.courses-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
+.empty-text {
+    color: #637990;
+    font-size: 1rem;
+}
+
+/* =====================
+   BUTTONS – ScholarStack
+===================== */
+
+.btn {
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* Primary (Login, Enroll, Submit) */
+.btn-primary {
+    background: #263650;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #1e2a40;
+    transform: translateY(-1px);
+}
+
+/* Secondary (View, Navigate) */
+.btn-secondary {
+    background: #eef1f5;
+    color: #263650;
+    border: 1px solid #d6d0c8;
+}
+
+.btn-secondary:hover {
+    background: #e4e9f0;
+}
+
+/* Outline (Logout, Cancel) */
+.btn-outline {
+    background: transparent;
+    color: #263650;
+    border: 1.5px solid #263650;
+}
+
+.btn-outline:hover {
+    background: rgba(38, 54, 80, 0.08);
+}
+
+/* Disabled */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.course-card button {
+    margin-top: 12px;
+    width: 100%;
+}
+
+.link-text {
+    margin-top: 16px;
+    color: #263650;
+    /* from your palette */
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.link-text:hover {
+    opacity: 0.8;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+    background: var(--bg-main);
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 240px;
+    background: var(--primary);
+    color: white;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.sidebar button {
+    background: transparent;
+    border: none;
+    color: white;
+    text-align: left;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.sidebar button:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* MAIN CONTENT */
+.main-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.dashboard-content h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.stat-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.form-row input {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    font-size: 14px;
+    min-width: 180px;
+    outline: none;
+}
+
+.form-row input:focus {
+    border-color: var(--accent);
+}
+
+.list-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.list-card p {
+    margin: 6px 0 0;
+    color: var(--text-light);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    opacity: 0.9;
+}
+
+.link-text {
+    margin-top: 16px;
+    color: var(--accent);
+    cursor: pointer;
+    text-align: center;
+}
+
+.link-text:hover {
+    text-decoration: underline;
+}
+
+.course-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: #eef2ff;
+    color: #3730a3;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+.list-card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.course-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: #eef2ff;
+    color: #3730a3;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.stat-card {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    cursor: default;
+    transition: all 0.25s ease;
+}
+
+.stat-card.clickable {
+    cursor: pointer;
+}
+
+.stat-card.clickable:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.list-container {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.course-list {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+.course-list li {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.muted {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.page-title {
+    font-size: 2rem;
+    margin-bottom: 4px;
+}
+
+.page-subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.student-card {
+    background: #fff;
+    padding: 1.4rem;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-4px);
+}
+
+.student-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+.avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #1f2f46;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.student-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.email {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.course-count {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #e8f0ff;
+    color: #3b82f6;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.student-meta {
+    font-size: 0.85rem;
+    color: #555;
+    margin: 12px 0;
+}
+
+.courses-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.course-pill {
+    background: #f1f5f9;
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.no-courses {
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.list-card {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.course-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* EDIT BUTTON */
+.btn-edit {
+    background: transparent;
+    border: 1.5px solid #3b82f6;
+    /* brand blue */
+    color: #3b82f6;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-edit:hover {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* DELETE BUTTON (refine existing) */
+.btn-danger {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+/* =====================
+   SIGNUP EXTRA FIELDS (AGE + CITY)
+===================== */
+
+/* Wrap age + city nicely if placed together */
+.signup-row {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Make sure they behave like existing inputs */
+.signup-row .input {
+    flex: 1;
+}
+
+/* Mobile stacking */
+@media (max-width: 480px) {
+    .signup-row {
+        flex-direction: column;
+    }
+}
+
