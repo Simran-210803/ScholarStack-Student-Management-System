@@ -168,7 +168,7 @@ npm run dev
 cd frontend
 npm init -y  #creates a package.json file
 npm install
-npm run dev
+npm start
 ```
 
 ---
@@ -218,7 +218,7 @@ npm run dev
 
 ## ## 🌐 **Live Demo**
 
-- **Backend (Render Hosted)**:[https://scholarstack-student-management-system.onrender.com](https://scholarstack-student-management-system.onrender.com)
+- **Backend (Render Hosted)**: [https://scholarstack-student-management-system.onrender.com](https://scholarstack-student-management-system.onrender.com)
   _(This is the live API endpoint — Routes can be directly tested in Postman using this base URL)_
 
 ---
