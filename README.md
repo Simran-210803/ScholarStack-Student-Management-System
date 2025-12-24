@@ -81,6 +81,21 @@ Built using the **MERN stack**, the platform provides secure authentication, mod
 
 ---
 
+## System Architecture
+
+The ScholarStack system follows a **client–server architecture**:
+
+- **Frontend (React)** communicates with the backend using REST APIs.
+- **Backend (Node.js + Express)** handles authentication, authorization, and business logic.
+- **MongoDB** stores users, courses, and enrollment data.
+- **JWT** is used for stateless authentication.
+- **Role-Based Access Control (RBAC)** ensures restricted access for admins and students.
+
+**Flow:**
+Frontend → API Request → JWT Verification → Controller → Database → Response
+
+---
+
 ## Project Structure
 
 ```
@@ -132,6 +147,38 @@ ScholarStack-Student-Management-System/
 
 ---
 
+## API Endpoints (Sample)
+
+### Authentication
+
+- `POST /api/auth/signup` – Register student
+- `POST /api/auth/login` – Login user
+
+### Student
+
+- `GET /api/student/dashboard`
+- `GET /api/student/courses`
+- `POST /api/student/enroll/:courseId`
+
+### Admin
+
+- `GET /api/admin/students`
+- `POST /api/admin/course`
+- `PUT /api/admin/course/:id`
+- `DELETE /api/admin/course/:id`
+
+---
+
+## Security Practices
+
+- Passwords are hashed using **bcrypt**
+- JWT tokens are signed using a secret stored in environment variables
+- Sensitive files (`.env`, `node_modules`) are excluded via `.gitignore`
+- Role-based middleware protects admin routes
+- Backend secrets are never pushed to GitHub
+
+---
+
 ## Environment Variables
 
 Create a .env file inside the backend folder:
@@ -170,6 +217,22 @@ npm init -y  #creates a package.json file
 npm install
 npm start
 ```
+
+---
+
+## Deployment
+
+### Backend Deployment (Render)
+
+- Backend deployed as a **Node Web Service**
+- Root directory set to `backend`
+- Environment variables configured in Render dashboard
+- Auto-deployment enabled on GitHub push
+
+### Frontend Deployment (Optional)
+
+- Frontend can be deployed on **Vercel / Netlify**
+- Backend API base URL updated to Render endpoint
 
 ---
 
@@ -216,7 +279,7 @@ npm start
 
 ---
 
-## ## 🌐 **Live Demo**
+## 🌐 **Live Demo**
 
 - **Backend (Render Hosted)**: [https://scholarstack-student-management-system.onrender.com](https://scholarstack-student-management-system.onrender.com)
   _(This is the live API endpoint — Routes can be directly tested in Postman using this base URL)_
