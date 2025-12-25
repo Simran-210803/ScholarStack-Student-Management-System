@@ -1,5 +1,4 @@
 const BASE_URL = "http://localhost:5000";
-const API_URL = import.meta.env.VITE_API_URL;
 
 export const loginUser = async (data) => {
   const res = await fetch(`${BASE_URL}/auth/login`, {
