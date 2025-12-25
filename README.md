@@ -66,12 +66,15 @@ Built using the **MERN stack**, the platform provides secure authentication, mod
 
 ## Tech Stack (Technologies Used)
 
-- Frontend
+**Frontend**
+
 - React.js
 - React Router
 - CSS (Custom Design System)
 - Fetch API
-- Backend
+
+**Backend**
+
 - Node.js
 - Express.js
 - MongoDB
