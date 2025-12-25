@@ -1,4 +1,5 @@
 const BASE_URL = "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const loginUser = async (data) => {
   const res = await fetch(`${BASE_URL}/auth/login`, {
@@ -44,15 +45,12 @@ export const getAllCourses = async () => {
 };
 
 export const enrollInCourse = async (courseId, token) => {
-  const res = await fetch(
-    `http://localhost:5000/enroll/${courseId}`,
-    {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    }
-  );
+  const res = await fetch(`http://localhost:5000/enroll/${courseId}`, {
+    method: "POST",
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  });
   return res.json();
 };
 
