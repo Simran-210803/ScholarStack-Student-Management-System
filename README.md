@@ -191,7 +191,7 @@ JWT_SECRET=your_jwt_secret
 
 ```
 
-Note: Replace your_mongodb_connection_string_here with your actual connection link.
+**Note:** Replace your_mongodb_connection_string_here with your actual connection link.
 
 - For MongoDB Atlas, use your cluster connection string.
 - For MongoDB Compass (local), use something like mongodb://127.0.0.1:27017/studentDB.
